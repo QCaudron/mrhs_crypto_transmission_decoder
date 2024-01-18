@@ -1,4 +1,4 @@
-oneTimePad = [
+const oneTimePad = [
     "48090", "79776", "45366", "46827", "11680",
     "68496", "47757", "10126", "36660", "25066",
     "07418", "79781", "48209", "28600", "65589",
@@ -12,7 +12,7 @@ oneTimePad = [
 ]
 
 
-conversionChart = {
+const conversionChart = {
     "0": "CODE",
     "1": "A",
     "2": "E",
@@ -53,7 +53,7 @@ conversionChart = {
 }
 
 
-codebook = {
+const codebook = {
     "000": "ABORT",
     "019": "ACCEPT",
     "028": "ACCESS",
@@ -154,7 +154,7 @@ codebook = {
     "974": "LONDON",
     "983": "ISTANBUL",
     "992": "PRAGUE"
- }
+}
 
 
 function addKeyToMessage(message, oneTimePad) {
@@ -183,7 +183,7 @@ function addKeyToMessage(message, oneTimePad) {
 }
 
 
-function convertToPlaintext(message, oneTimePad, conversionChart) {
+function convertToPlaintext(message) {
     let decodedPlaintext = "";
 
     // Add the offset key to the message

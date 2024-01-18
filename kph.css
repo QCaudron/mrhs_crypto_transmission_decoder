@@ -1,0 +1,24 @@
+body {
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    margin: 20px;
+}
+
+textarea {
+    box-sizing: border-box;
+    resize: none;
+    font-family: 'Courier New', monospace;
+    height: 80px;
+    width: 30%;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+}
