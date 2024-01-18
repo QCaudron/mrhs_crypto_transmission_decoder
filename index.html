@@ -13,30 +13,37 @@
 
     <h3>This is for the <a href="https://www.radiomarine.org/mrhs-events">Crypto Transmission from KPH</a> event.</h3>
 
-    <p>See the <a href="https://www.radiomarine.org/events-2">Mission Critical Information</a> for decoding tools and
-        technique.<br />
-        When complete, submit results to <b>crypto@radiomarine.org</b> with subject line <b>Decoded Numbers
-            Message</b>.<br />
-        Include the message, <b>properly reformatted into words</b>, the frequency and location of message copy,<br />
-        a signal report, and the name for the certificate.
+    <p>See the <a href="https://www.radiomarine.org/events-2">Mission Critical Information</a> page for decoding tools
+        and technique.<br /></p>
+
+    <p>When complete, submit results to <b>crypto@radiomarine.org</b> with :</p>
+    <ul>
+        <li>subject line <b>Decoded Numbers Message</b></li>
+        <li>the message, <b>properly reformatted into words</b></li>
+        <li>the frequency and location of message copy</li>
+        <li>a signal report</li>
+        <li>the name for the certificate</li>
+    </ul>
+
+    <p>The box contains the example message deciphered on the MRHS page.<br />Alternatively,
+        try <b>74502 97192 88194 40284 07144</b>.
     </p>
 
     <textarea id="inputText" style="width: 30%">68496 32579 24623 65030 96188 42672 00212 01749 61591</textarea>
     <br />
-    <button onclick="decrypt()">Decrypt</button>
+    <button onclick="decrypt('demo')">Demo OTP</button><button onclick="decrypt('contest')">Contest OTP</button>
 
     <div id="result"></div>
 
     <script src="mrhs_decoder.js"></script>
     <script>
-        function decrypt() {
+        function decrypt(padToUse) {
+            const pad = (padToUse === 'demo') ? demoOneTimePad : contestOneTimePad;
             const inputText = document.getElementById('inputText').value.split(" ");
-            const result = convertToPlaintext(inputText);
+            const result = convertToPlaintext(inputText, pad, conversionChart, codebook);
             document.getElementById('result').innerHTML = result;
         }
     </script>
 </body>
-
-
 
 </html>
